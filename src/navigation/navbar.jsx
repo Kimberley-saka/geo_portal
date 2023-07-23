@@ -1,10 +1,10 @@
 export default function NavBar() {
   return(
     <div>
-      <nav className="flex flex-row justify-between items-center px-5  h-20
-      text-sky-950 font-sans text-lg md:px-40">
+      <nav className="flex flex-row justify-between items-center px-5 h-20
+      text-sky-950 md:px-40 ">
         <div className=" flex items-center h-full">
-        <a href="/" >
+        <a href="/" className="font-medium text-xl">
          Open <span className="block"> Geospatial</span>
         </a>
          <div className="flex h-11 pt-1">
@@ -13,7 +13,7 @@ export default function NavBar() {
       
         </div>
         
-        <div className="hidden flex-row justify-between items-center 
+        <div className="hidden flex-row text-base  justify-between items-center 
         w-96 h-full md:flex">
         <a href="/explore" className="hover:text-gray-400">Explore</a>
         <a href="/about" className="hover:text-gray-400">About Us</a>

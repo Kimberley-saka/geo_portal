@@ -4,10 +4,10 @@ return(
   pt-14 md:px-8 md:flex-row md:gap-20">
     <div className="flex flex-col gap-5 justify-start items-start md:w-2/5
     md:gap-9">
-      <p className="text-3xl text-bold text-sky-950  md:text-5xl">
+      <p className="text-3xl font-bold text-sky-950  md:text-5xl">
       Discover geospatial datasets that suit your needs</p>
 
-      <p className="text-lg text-gray-500">
+      <p className="text-base text-gray-500">
         Uncover a world of geospatial data at your finger tips
       </p>
 

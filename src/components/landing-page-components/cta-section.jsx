@@ -1,7 +1,7 @@
 export default function CtaSection() {
   return(
-    <div className=" flex flex-col gap-5 pt-12 md:px-8 md:pt-24 text-sky-950
-    md:gap-24 md:flex-row ">
+    <div className=" flex flex-col gap-5 my-20 md:px-8 text-sky-950
+    md:gap-24 md:flex-row md:my-40">
       <div className="flex flex-col gap-5 md:w-1/3">
         <p className="font-bold text-3xl"> 
           Welcome to our geospatial data wonderland </p>

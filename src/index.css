@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body{
-    
     font-family: "Roboto";
     background-image: url('/img/abstract-bg.jpg');
     background-repeat: no-repeat;

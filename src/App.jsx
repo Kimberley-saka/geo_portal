@@ -11,7 +11,6 @@ export default function App() {
   return (
     <>
     <NavBar/>
-    <LandingPage/>
       <Routes>
         <Route path="/" element={<LandingPage/>}></Route>
         <Route path="/explore" element={<ExplorePage/>}></Route>

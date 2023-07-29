@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export default function div() {
   return(
-      <div className="flex flex-row justify-between h-48 bg-sky-950 pt-5 px-20 text-white">
+      <div className="flex flex-row justify-between h-46 bg-sky-950 pt-5 px-20 text-white">
         <div className=" flex items-start h-full bg-slate-400">
           <div className="flex items-start h-1/3">
           <Link to="/" className="font-medium text-xl">

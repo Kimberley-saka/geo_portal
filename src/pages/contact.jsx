@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import validator from "validator";
 
@@ -47,16 +48,19 @@ export default function ContactUsPage() {
             type="text" placeholder="Enter your Full Name" />
 
             <input className="h-10 pl-4 outline-none border-2 border-gray-300 rounded-md" 
-            type="email" placeholder="Enter your Email Addres" />
+            type="email" placeholder="Enter your Email Addres"
+            onChange={(email) => validateEmail(email)}/>
 
             <input className="h-10 pl-4 outline-none border-2 border-gray-300 rounded-md"
             type="text" placeholder="Enter Subject"
-            onChange={(email) => validateEmail(email)}
             />
 
-            <input className="h-24 pl-4 outline-none border-2 border-gray-300 rounded-md"
-            type="text" placeholder="Enter your Message" />
-            <button className="bg-sky-500 w-20 h-10 text-white rounded-md"
+            <textarea name="messageContent" rows={5} cols={60}
+            defaultValue="Enter Message" className="pl-4 pt-4 outline-none border-2 
+            border-gray-300 text-gray-400 rounded-md"/>
+
+
+            <button type="submit"className="bg-sky-500 w-20 h-10 text-white rounded-md"
             >Submit</button>
           </form>
         </div>

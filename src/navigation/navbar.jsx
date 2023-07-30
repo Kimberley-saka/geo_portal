@@ -17,7 +17,8 @@ export default function NavBar() {
         </div>
         
         <div className="hidden flex-row text-base  justify-between items-center 
-        w-96 h-full md:flex">
+        w-2/4 h-full md:flex">
+          <Link to="/" className="hover:text-gray-400">Home</Link>
         <Link to="/explore" className="hover:text-gray-400">Explore</Link>
         <Link to="/about" className="hover:text-gray-400">About Us</Link>
         <Link to="/contact" className="hover:text-gray-400">Contact Us</Link>

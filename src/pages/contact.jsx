@@ -42,7 +42,7 @@ export default function ContactUsPage() {
           </div>
 
 
-        <div className="px-8 py-8 w-full bg-white">
+        <div className="px-8 mb-3 py-8 w-full bg-white md:mb-0">
           <form className="flex gap-5 flex-col ">
             <input className="h-10 pl-4 outline-none border-2 border-gray-300 rounded-md" 
             type="text" placeholder="Enter your Full Name" />

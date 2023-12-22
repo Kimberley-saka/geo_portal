@@ -2,7 +2,7 @@
 
 function SignUp() {
   return (
-    <div>
+    <div className="px-2">
       Sign up
     </div>
   )

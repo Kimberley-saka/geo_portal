@@ -34,11 +34,11 @@ function Authentication() {
         </div>
 
         {isLogin ? (
-          <div className="flex h-96 bg-slate-300">
+          <div className="flex justify-center h-96">
             <Login/>
           </div>
         ) : (
-          <div>
+          <div className="flex h-96">
             <SignUp />
           </div>
         )}

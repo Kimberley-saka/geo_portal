@@ -26,19 +26,11 @@ export default function ContactUsPage() {
             <p>
             Have any questions, suggestions, or just want to say hello? 
             We would love to hear from you. Getting in touch with us is easy
-            simply use one of the methods below, or the form and we will 
+            simply use the form and we will 
             get back to you as soon as possible.
 
             </p>
           </div>
-
-          <div className="flex flex-row gap-2 items-center">
-            <div className=" flex h-6">
-            <img src="/icons/email.png"></img>
-            </div>
-            <p> kimberleysaka@gmail.com</p>
-          </div>
-
           </div>
 
 

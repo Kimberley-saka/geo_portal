@@ -1,8 +1,7 @@
-
-import { Link } from "react-router-dom"
+import { Link} from "react-router-dom";
 
 export default function NavBar() {
-  return(
+  return (
     <div>
       <nav className="flex flex-row justify-between items-center px-5 h-20
       text-sky-950 md:px-40 ">
@@ -22,18 +21,12 @@ export default function NavBar() {
         <Link to="/explore" className="hover:text-gray-400">Explore</Link>
         <Link to="/about" className="hover:text-gray-400">About Us</Link>
         <Link to="/contact" className="hover:text-gray-400">Contact Us</Link>
-        <div className=" flex justify-center items-center rounded-full
-        bg-sky-500 w-20 h-10 hover:bg-sky-300">
-          <Link to="/authentication" >
-            Log in</Link>
-        </div>
+        <Link to="/authentication" className=" flex justify-center items-center rounded-full
+        bg-sky-500 w-20 h-10 hover:bg-sky-300 transition-colors">
+          Log in
+        </Link>
         
         </div>
-       
-        
-
-        
-    
       
     </nav>
     

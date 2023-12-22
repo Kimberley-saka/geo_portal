@@ -1,34 +1,53 @@
-export default function Authentication() {
-  return(
-   <div className="flex justify-center items-center">
-    
-    <div className="flex flex-col items-center h-2/4 w-2/4 bg-slate-500 shadow-2xl shadow-black">
+import Login from "../components/auth/Login";
+import SignUp from "../components/auth/SignUp";
 
-      <div>
-        <p>Login to your acccount</p>
-      </div>
 
-      <div className="flex flex-col">
-        <form className="flex flex-col">
-          <label>E-mail</label>
-          <input type="text" />
+import React, { useState } from 'react';
 
-          <label>Password</label>
-          <input type="text" />
+function Authentication() {
+  const [isLogin, setIsLogin] = useState(true);
 
-          <div> 
-            <button>Register</button>
-            <button>Login</button>
+  const switchLoginSignUp = () => {
+    setIsLogin(!isLogin);
+  };
+
+  return (
+    <div className="flex justify-center items-center ">
+      <div className="flex flex-col justify-center my-14 md:w-1/3
+       border-gray-300 border rounded-2xl shadow-xl ">
+        <div className="flex px-10 space-x-28 text-gray-500 text-lg pt-6">
+          <div 
+            className={`flex justify-center  border-b-2 ${isLogin ? 'border-sky-500 text-sky-500' : 'border-gray-500'} 
+            w-28 hover:border-sky-500 hover:text-sky-500 transition-colors duration-200 cursor-pointer`} 
+            onClick={switchLoginSignUp}
+          >
+            Login
           </div>
-         
-        </form>
-        
-        <a href="">Forgot password</a>
+
+          <div 
+            className={`flex justify-center border-b-2 ${!isLogin ? 'border-sky-500 text-sky-500' : 'border-gray-500'} 
+            w-28 hover:border-sky-500 hover:text-sky-500 transition-colors duration-200 cursor-pointer`} 
+            onClick={switchLoginSignUp}
+          >
+            Sign Up
+          </div>
+        </div>
+
+        {isLogin ? (
+          <div className="flex h-96 bg-slate-300">
+            <Login/>
+          </div>
+        ) : (
+          <div>
+            <SignUp />
+          </div>
+        )}
+
+
       </div>
-
+      
     </div>
-
-
-   </div>
-  )
+  );
 }
+
+export default Authentication;

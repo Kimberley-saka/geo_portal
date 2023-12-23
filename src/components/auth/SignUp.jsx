@@ -6,23 +6,33 @@ function SignUp() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword,setConfirmPassword] = useState("");
 
   const submitUserData = (event) => {
     event.preventDefault();
-    axios.post("http://localhost::8000/api/create/", {
+
+    //Chack for valid email
+
+    const emailRegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Invalid email");
+      return;
+    }
+
+    //check for valid password
+    if (password.length < 8) {
+      alert("Password must be at least 8 characters long");
+      return;
+    }
+    axios.post("http://localhost:8000/api/create/", {
       firstName,
       lastName,
       email,
       password,
-      confirmPassword,
-    }).then((response) => {
-      console.log(response.data);
     });
   }
   return (
     <div className=" flex justify-center w-full pt-14">
-      <form className="flex flex-col space-y-5" onScroll={submitUserData}>
+      <form className="flex flex-col space-y-5" onSubmit={submitUserData}>
         <input className=" outline-none px-8 w-72 h-8 rounded-full shadow-sm shadow-sky-300" 
         type="text" 
         placeholder="First Name"
@@ -46,11 +56,6 @@ function SignUp() {
         value={password}
         onChange={(event) => setPassword(event.target.value)}></input>
 
-        <input className="outline-none w-72 h-8 px-8 rounded-full shadow-sm shadow-sky-300"
-        type="password"
-        placeholder="Confirm Password"
-        value={confirmPassword}
-        onChange={(event => setConfirmPassword(event.target.value))}></input>
 
         <button className="w-72 h-8 rounded-full bg-sky-500 text-white" type="submit">
           Sign Up</button>

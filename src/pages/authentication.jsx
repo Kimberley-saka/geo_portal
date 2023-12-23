@@ -2,7 +2,7 @@ import Login from "../components/auth/Login";
 import SignUp from "../components/auth/SignUp";
 
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function Authentication() {
   const [isLogin, setIsLogin] = useState(true);

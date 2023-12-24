@@ -6,6 +6,7 @@ function SignUp() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const submitUserData = (event) => {
     event.preventDefault();
@@ -14,13 +15,13 @@ function SignUp() {
 
     const emailRegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
     if (!emailRegex.test(email)) {
-      alert("Invalid email");
+      setError("Invalid email");
       return;
     }
 
     //check for valid password
     if (password.length < 8) {
-      alert("Password must be at least 8 characters long");
+      setError("Password must be at least 8 characters long");
       return;
     }
     axios.post("http://localhost:8000/api/create/", {
@@ -59,8 +60,7 @@ function SignUp() {
 
         <button className="w-72 h-8 rounded-full bg-sky-500 text-white" type="submit">
           Sign Up</button>
-
-    
+          {error && <p className="text-red-500 text-sm">{error}</p>}
       </form>
     </div>
   )

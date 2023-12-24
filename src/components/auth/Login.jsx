@@ -1,19 +1,23 @@
-import { useState } from "react"
-import {useForm} from ""
+import { useState } from "react";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [user, setUser] = useState(null);
 
   const logInUser = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:8000/api/token/"), {
+    axios.post("http://localhost:8000/api/token/", {
       email,
       password,
-  }.then((response) => {
-    console.log(response.data);
-  });
+    })
+    .then((response) => {
+      const decodedAccessToken = jwtDecode(response.data.access);
+      setUser({firstName: decodedAccessToken.firstName, lastName: decodedAccessToken.lastName});
+    })
+    .catch((error) => console.log(error))
 }
   return (
     <div className=" flex justify-center w-full pt-24">
@@ -40,6 +44,16 @@ function Login() {
 
         <button className="w-72 h-9 rounded-full bg-sky-500 text-white" type="submit">
           Login</button>
+
+          {
+            user? (
+              <div className="flex flex-col items-center space-y-2">
+                <h1 className="text-2xl font-bold">Welcome {user.firstName} {user.lastName}</h1>
+                <p className="text-xl">You have successfully logged in</p>
+              </div>
+            ): (<button onClick={logInUser}>LogIn</button>
+            )
+          }
       
       </form>
     </div>

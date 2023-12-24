@@ -1,6 +1,6 @@
 export default function Description() {
 return(
-  <div className=" flex flex-col-reverse gap-10 justify-start 
+  <div className=" flex flex-col-reverse px-6 gap-10 justify-start 
   pt-14 md:px-8 md:flex-row md:gap-20">
     <div className="flex flex-col gap-5 justify-start items-start md:w-2/5
     md:gap-9">

@@ -20,15 +20,17 @@ function Login() {
     .catch((error) => console.log(error))
 }
   return (
-    <div className=" flex justify-center w-full pt-24">
-      <form className="flex flex-col space-y-6" onSubmit={logInUser}>
-        <input className=" outline-none px-8 w-72 h-9 rounded-full shadow-sm shadow-sky-300"
+    <div className=" flex justify-center w-full md:pt-24">
+      <form className="flex flex-col justify-center items-center space-y-6" onSubmit={logInUser}>
+        <input className="outline-none px-8 w-58 h-9 rounded-full shadow-sm shadow-sky-300
+        md:w-72"
         type="email"
         value={email}
         placeholder="Email"
         onChange={(event) => setEmail(event.target.value)}></input>
 
-        <input className="outline-none w-72 h-9 px-8 rounded-full shadow-sm shadow-sky-300"
+        <input className="outline-none h-9 px-8 rounded-full shadow-sm shadow-sky-300
+        md:w-72"
         type="password"
         value={password}
         placeholder="Password"
@@ -42,7 +44,7 @@ function Login() {
           <a href="#" className="text-sky-500 cursor-pointer">Forgot password?</a>
         </div>
 
-        <button className="w-72 h-9 rounded-full bg-sky-500 text-white" type="submit">
+        <button className="w-58 h-9 rounded-full bg-sky-500 text-white" type="submit">
           Login</button>
 
           {

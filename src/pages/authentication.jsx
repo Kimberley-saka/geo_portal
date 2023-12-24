@@ -13,8 +13,8 @@ function Authentication() {
 
   return (
     <div className="flex justify-center items-center ">
-      <div className="flex flex-col justify-center my-14 md:w-1/3
-       border-gray-300 border rounded-2xl shadow-xl ">
+      <div className="flex flex-col justify-center w-5/6 my-16
+       border-gray-300 border rounded-2xl shadow-xl md:w-1/3 md:my-14 ">
         <div className="flex px-10 space-x-28 text-gray-500 text-lg pt-6">
           <div 
             className={`flex justify-center  border-b-2 ${isLogin ? 'border-sky-500 text-sky-500' : 'border-gray-500'} 
@@ -34,11 +34,11 @@ function Authentication() {
         </div>
 
         {isLogin ? (
-          <div className="flex h-full justify-center md:h-96">
+          <div className="flex h-96 justify-center md:h-96">
             <Login/>
           </div>
         ) : (
-          <div className="flex md:h-96">
+          <div className="flex h-full md:h-96">
             <SignUp />
           </div>
         )}

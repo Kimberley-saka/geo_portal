@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
+import {useNavigate} from "react-router-dom";
+import { UserContext } from "../../utils/UserContext";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
+  
+  const {setUser} = useContext(UserContext)
+
+  const navigate = useNavigate();
 
   const logInUser = (event) => {
     event.preventDefault();
@@ -16,6 +21,7 @@ function Login() {
     .then((response) => {
       const decodedAccessToken = jwtDecode(response.data.access);
       setUser({firstName: decodedAccessToken.firstName, lastName: decodedAccessToken.lastName});
+      navigate("/");
     })
     .catch((error) => console.log(error))
 }
@@ -36,7 +42,7 @@ function Login() {
         placeholder="Password"
         onChange={(event) => setPassword(event.target.value)}></input>
 
-        <div className="flex justify-between">
+        <div className="flex flex-row space-x-6">
           <div className="flex items-center space-x-2">
             <input className="outline-none border-none" type="checkbox"></input>
             <p className="text-gray-500">Remember me</p>
@@ -44,18 +50,10 @@ function Login() {
           <a href="#" className="text-sky-500 cursor-pointer">Forgot password?</a>
         </div>
 
-        <button className="w-58 h-9 rounded-full bg-sky-500 text-white" type="submit">
+        <button className="w-full h-9 rounded-full bg-sky-500 text-white" type="submit">
           Login</button>
 
-          {
-            user? (
-              <div className="flex flex-col items-center space-y-2">
-                <h1 className="text-2xl font-bold">Welcome {user.firstName} {user.lastName}</h1>
-                <p className="text-xl">You have successfully logged in</p>
-              </div>
-            ): (<button onClick={logInUser}>LogIn</button>
-            )
-          }
+        
       
       </form>
     </div>

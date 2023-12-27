@@ -8,11 +8,14 @@ import ContactUsPage from "./pages/contact";
 import ExplorePage from "./pages/explore";
 import LandingPage from "./pages/landing";
 import { Routes, Route} from "react-router-dom";
+import { UserContext } from "./utils/UserContext";
+import { useState } from "react";
 
 export default function App() {
+  const [user, setUser] = useState(null);
 
   return (
-    <>
+    <UserContext.Provider value={{user, setUser}} >
     <NavBar/>
     
       <Routes>
@@ -27,7 +30,7 @@ export default function App() {
       </Routes>
     
     <Footer/>
-    </>
+    </UserContext.Provider>
   )
 }
 

@@ -1,6 +1,10 @@
 import { Link} from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from '../utils/UserContext';
 
 export default function NavBar() {
+  const {user} =useContext(UserContext)
+
   return (
     <div>
       <nav className="flex flex-row justify-between items-center mx-6 h-20
@@ -23,7 +27,7 @@ export default function NavBar() {
         <Link to="/contact" className="hover:text-gray-400">Contact Us</Link>
         <Link to="/authentication" className=" flex justify-center items-center rounded-full
         bg-sky-500 w-20 h-10 hover:bg-sky-300 transition-colors">
-          Log in
+          {user? `Hi ${user.firstName}`: 'Log in'}
         </Link>
         
         </div>

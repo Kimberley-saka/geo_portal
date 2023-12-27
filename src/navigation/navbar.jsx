@@ -7,11 +7,11 @@ export default function NavBar() {
 
   return (
     <div>
-      <nav className="flex flex-row justify-between items-center mx-6 h-20
+      <nav className="flex flex-row justify-between items-center px-6 h-20
       text-sky-950 md:px-40 ">
         <div className=" flex items-center h-full">
         <Link to="/" className="font-medium text-xl">
-         Open <span className="block"> Geospatial</span>
+         Open <span className="block"> Geoportal</span>
         </Link>
          <div className="flex h-11 pt-1">
            <img src="/icons/location_icon.png" alt="location pin"/>
@@ -26,7 +26,7 @@ export default function NavBar() {
         <Link to="/about" className="hover:text-gray-400">About Us</Link>
         <Link to="/contact" className="hover:text-gray-400">Contact Us</Link>
         <Link to="/authentication" className=" flex justify-center items-center rounded-full
-        bg-sky-500 px-3 h-10 text-white hover:bg-sky-300 transition-colors">
+        bg-sky-950 px-3 h-10 text-white hover:bg-sky-300 transition-colors">
           {user? `Hi ${user.firstName}`: 'Log in'}
         </Link>
         

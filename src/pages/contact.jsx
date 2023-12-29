@@ -4,16 +4,6 @@ import validator from "validator";
 
 
 export default function ContactUsPage() {
-  const [message, setMessage] = useState("");
-  const validateEmail = (e) => {
-    var email = e.target.value;
-
-    if (validator.isEmail(email)) {
-      setMessage("")
-    } else {
-      setMessage("Please, enter valid email")
-    }
-  }
 
     return(
       <div className="flex flex-col justify-center px-8 md:px-24 md:my-16 md:flex-row">

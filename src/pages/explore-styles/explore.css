@@ -1,0 +1,15 @@
+#datasets::-webkit-scrollbar {
+    width: 16px;
+  }
+  
+  #datasets::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  #datasets::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  #datasets::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

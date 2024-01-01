@@ -7,7 +7,7 @@ export default function ExplorePage() {
   const mapRef = useRef(null)
   useEffect(() => {
     if (!mapRef.current) { // Only create the map if it doesn't already exist
-      mapRef.current = L.map('map').setView([-13.254308, 34.301525], 7);
+      mapRef.current = L.map('map').setView([-13.254308, 34.301525], 6);
   
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -16,7 +16,7 @@ export default function ExplorePage() {
   }, []);
 
   return(
-    <div className="flex flex-row px-8 md:px-24 md:my-14">
+    <div className="flex flex-row px-8 md:px-24 md:my-10">
       <div className="flex flex-col border-transparent shadow-2xl shadow-sky-950 space-y-8 pt-4 
       md:w-1/3 md:h-screen">
         <form className="w-full px-8 pt-4">

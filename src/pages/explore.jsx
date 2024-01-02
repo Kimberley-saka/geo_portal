@@ -1,18 +1,36 @@
-import './explore-styles/explore.css';
+
 import L from 'leaflet';
+import 'leaflet-draw';
 import 'leaflet/dist/leaflet.css';
+import './explore-styles/explore.css';
+
 import { useEffect, useRef } from 'react';
 
 export default function ExplorePage() {
-  const mapRef = useRef(null)
+  const mapRef = useRef(null);
+  const drawControlRef = useRef(null);
   useEffect(() => {
     if (!mapRef.current) { // Only create the map if it doesn't already exist
-      mapRef.current = L.map('map').setView([-13.254308, 34.301525], 6);
+      mapRef.current = L.map('map', {drawControl: true}).setView([-13.254308, 34.301525], 6);
   
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(mapRef.current);
+
+      //add draw control
+      if (!drawControlRef.current) {
+        drawControlRef.current = new L.Control.Draw();
+        mapRef.current.addControl(drawControlRef.current);
+
+        //add event listener for draw:created
+        mapRef.current.on('draw:created', function (e) {
+          const type = e.layerType,
+              layer = e.layer;
+          mapRef.current.addLayer(layer);
+        });
     }
+      }
+    
   }, []);
 
   return(
